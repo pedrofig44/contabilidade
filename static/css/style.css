@@ -136,6 +136,18 @@
     max-height: 45px;
 }
 
+.navbar .btn-light.rounded-pill {
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-light.rounded-pill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 185, 142, 0.6);
+    background-color: #ffffff;
+    color: var(--primary) !important;
+    font-weight: 500;
+}
+
 @media (max-width: 991.98px) {
     .sticky-top.navbar {
         position: relative;
@@ -405,6 +417,20 @@
     border: 1px solid rgba(256, 256, 256, .1);
     border-radius: 40px;
     transition: .3s;
+}
+
+.footer .container-fluid {
+    max-width: 100%;
+    position: relative;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+@media (max-width: 768px) {
+    .footer .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 .footer .btn.btn-social:hover {
