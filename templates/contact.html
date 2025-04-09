@@ -3,7 +3,7 @@
 
 {% block content %}
     <!-- Page Header Start -->
-    <div class="container-xxl bg-primary page-header">
+    <div class="container-xxl bg-primary">
         <div class="container text-center">
             <h1 class="text-white animated zoomIn mb-3">Solicitar Orçamento</h1>
             <nav aria-label="breadcrumb">
@@ -16,6 +16,9 @@
     </div>
     <!-- Page Header End -->
 
+    <!-- Messages -->
+    {% include 'includes/includes.html' %}
+
     <!-- Contact Start -->
     <div class="container-xxl py-6">
         <div class="container">
@@ -23,32 +26,75 @@
                 <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Contacte-nos</div>
                 <h2 class="mb-5">Se Tiver Qualquer Dúvida, Não Hesite em Contactar-nos</h2>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
-                    <form>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="row gy-4">
+                        <div class="col-md-4 text-center">
+                            <h5 class="fw-bold text-primary mb-3">Email</h5>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>marco.duarte@duarama.pt</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h5 class="fw-bold text-primary mb-3">Telemóvel</h5>
+                            <p><i class="fa fa-phone text-primary me-2"></i>231401943</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h5 class="fw-bold text-primary mb-3">Endereço</h5>
+                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i>Rua Marquês de Marialva, Nº13, Escritório 11, 3060-184 Cantanhede</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.2774723919735!2d-8.5924646!3d40.3474389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2252eef33f18f3%3A0x3e7a7c0c3ee5c3f!2sR.%20Marqu%C3%AAs%20de%20Marialva%2013%2C%203060-184%20Cantanhede!5e0!3m2!1spt-PT!2spt!4v1712653500796!5m2!1spt-PT!2spt" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <form method="post">
+                        {% csrf_token %}
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Seu Nome">
-                                    <label for="name">Seu Nome</label>
+                                    {{ form.name }}
+                                    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                                    {% if form.name.errors %}
+                                        <div class="text-danger">{{ form.name.errors }}</div>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Seu Email">
-                                    <label for="email">Seu Email</label>
+                                    {{ form.email }}
+                                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                                    {% if form.email.errors %}
+                                        <div class="text-danger">{{ form.email.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.phone }}
+                                    <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
+                                    {% if form.phone.errors %}
+                                        <div class="text-danger">{{ form.phone.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.subject }}
+                                    <label for="{{ form.subject.id_for_label }}">{{ form.subject.label }}</label>
+                                    {% if form.subject.errors %}
+                                        <div class="text-danger">{{ form.subject.errors }}</div>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Assunto">
-                                    <label for="subject">Assunto</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Deixe sua mensagem aqui" id="message" style="height: 150px"></textarea>
-                                    <label for="message">Mensagem</label>
+                                    {{ form.message }}
+                                    <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+                                    {% if form.message.errors %}
+                                        <div class="text-danger">{{ form.message.errors }}</div>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="col-12">

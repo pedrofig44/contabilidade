@@ -11,7 +11,7 @@
     <meta content="DUARAMA oferece serviços de contabilidade e consultoria para empresas de todos os portes, com soluções personalizadas para seu negócio." name="description">
 
     <!-- Favicon -->
-    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <link href="{% static 'img/logo_duarama.png' %}" rel="icon" type="image/png">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,9 +47,9 @@
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="{% url 'index' %}" class="navbar-brand p-0">
+                <a href="{% url 'index' %}" class="navbar-brand p-0 d-flex align-items-center">
+                    <img src="{% static 'img/logo_duarama.png' %}" alt="DUARAMA Logo" class="me-2" style="max-height: 45px;">
                     <h1 class="m-0">DUARAMA</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -82,48 +82,34 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-4">
                         <h5 class="text-white mb-4">Entre em Contato</h5>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>Rua Principal, 123, Bairro Centro, Rio de Janeiro, RJ</p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+55 (21) 9999-9999</p>
-                        <p><i class="fa fa-envelope me-3"></i>contato@duarama.com.br</p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>Rua Marquês de Marialva, Nº13, Escritório 11, 3060-184 Cantanhede</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>231401943</p>
+                        <p><i class="fa fa-envelope me-3"></i>marco.duarte@duarama.pt</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 text-center">
-                        <h5 class="text-white mb-4">Links Rápidos</h5>
-                        <a class="btn btn-link" href="">Sobre Nós</a>
-                        <a class="btn btn-link" href="">Contato</a>
-                        <a class="btn btn-link" href="">Política de Privacidade</a>
-                        <a class="btn btn-link" href="">Termos & Condições</a>
-                        <a class="btn btn-link" href="">Carreiras</a>
+                        <h5 class="text-white mb-4">Navegação</h5>
+                        <a class="btn btn-link" href="{% url 'index' %}">Home</a>
+                        <a class="btn btn-link" href="{% url 'about' %}">Sobre Nós</a>
+                        <a class="btn btn-link" href="{% url 'contact' %}">Orçamento</a>
                     </div>
                     <div class="col-md-6 col-lg-4 text-center">
                         <h5 class="text-white mb-4">Serviços</h5>
-                        <a class="btn btn-link" href="">Contabilidade</a>
-                        <a class="btn btn-link" href="">Consultoria Fiscal</a>
-                        <a class="btn btn-link" href="">Planejamento Tributário</a>
-                        <a class="btn btn-link" href="">Gestão Financeira</a>
-                        <a class="btn btn-link" href="">Auditoria</a>
+                        <a class="btn btn-link" href="{% url 'about' %}">Contabilidade Organizada</a>
+                        <a class="btn btn-link" href="{% url 'about' %}">Consultoria Fiscal</a>
+                        <a class="btn btn-link" href="{% url 'about' %}">Processamento Salarial</a>
+                        <a class="btn btn-link" href="{% url 'about' %}">Declarações Fiscais</a>
                     </div>
                 </div>
             </div>
             <div class="container-fluid">
                 <div class="copyright">
                     <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">DUARAMA</a>, Todos os direitos reservados.
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Ajuda</a>
-                                <a href="">FAQ</a>
-                            </div>
+                        <div class="col-md-12 text-center mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">DUARAMA</a>, Todos os direitos reservados. 2025
                         </div>
                     </div>
                 </div>
@@ -132,7 +118,7 @@
         <!-- Footer End -->
 
 
-        
+
     </div>
 
     <!-- JavaScript Libraries -->

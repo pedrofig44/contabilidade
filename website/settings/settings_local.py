@@ -17,7 +17,8 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = [
     'localhost', 
-    '127.0.0.1'
+    '127.0.0.1',
+    'a912-2001-818-eaa2-3400-31da-8ae-ca6f-b031.ngrok-free.app'
 ]
 
 
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "main"
 ]
 
 MIDDLEWARE = [
@@ -108,6 +110,11 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://a912-2001-818-eaa2-3400-31da-8ae-ca6f-b031.ngrok-free.app',
+]
 
 
 # Static files (CSS, JavaScript, Images)
