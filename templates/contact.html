@@ -98,6 +98,17 @@
                                 </div>
                             </div>
                             <div class="col-12">
+                                <div class="form-check">
+                                    {{ form.gdpr_consent }}
+                                    <label class="form-check-label" for="{{ form.gdpr_consent.id_for_label }}">
+                                        Concordo com o processamento dos meus dados pessoais de acordo com a <a href="{% url 'privacy_policy' %}">Política de Privacidade</a>.
+                                    </label>
+                                    {% if form.gdpr_consent.errors %}
+                                        <div class="text-danger">{{ form.gdpr_consent.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Enviar Mensagem</button>
                             </div>
                         </div>

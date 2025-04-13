@@ -30,3 +30,22 @@ def contact(request):
         form = ContactForm()
     
     return render(request, 'contact.html', {'form': form})
+
+
+def privacy_policy(request):
+    """
+    View function for the privacy policy page.
+    """
+    return render(request, 'legal/privacy_policy.html')
+
+def terms_of_service(request):
+    """
+    View function for the terms of service page.
+    """
+    return render(request, 'legal/terms_of_service.html')
+
+def cookie_policy(request):
+    """
+    View function for the cookie policy page.
+    """
+    return render(request, 'legal/cookie_policy.html')

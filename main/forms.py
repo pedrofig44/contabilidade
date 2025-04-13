@@ -2,9 +2,16 @@ from django import forms
 from .models import ContactRequest
 
 class ContactForm(forms.ModelForm):
+    gdpr_consent = forms.BooleanField(
+        required=True,
+        label='',
+        widget=forms.CheckboxInput(attrs={'class': 'form-check-input me-2'}),
+        error_messages={'required': 'É necessário concordar com o processamento dos seus dados para prosseguir.'}
+    )
+    
     class Meta:
         model = ContactRequest
-        fields = ['name', 'email', 'phone', 'subject', 'message']
+        fields = ['name', 'email', 'phone', 'subject', 'message', 'gdpr_consent']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'id': 'name', 'placeholder': 'Seu Nome'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'id': 'email', 'placeholder': 'Seu Email'}),

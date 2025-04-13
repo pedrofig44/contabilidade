@@ -80,7 +80,7 @@
         <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
             <div class="container-fluid py-5">
                 <div class="row g-5">
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Entre em Contato</h5>
                         <p><i class="fa fa-map-marker-alt me-3"></i>Rua Marquês de Marialva, Nº13, Escritório 11, 3060-184 Cantanhede</p>
                         <p><i class="fa fa-phone-alt me-3"></i>231401943</p>
@@ -90,18 +90,24 @@
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 text-center">
+                    <div class="col-md-6 col-lg-3 text-center">
                         <h5 class="text-white mb-4">Navegação</h5>
                         <a class="btn btn-link" href="{% url 'index' %}">Home</a>
                         <a class="btn btn-link" href="{% url 'about' %}">Sobre Nós</a>
                         <a class="btn btn-link" href="{% url 'contact' %}">Orçamento</a>
                     </div>
-                    <div class="col-md-6 col-lg-4 text-center">
+                    <div class="col-md-6 col-lg-3 text-center">
                         <h5 class="text-white mb-4">Serviços</h5>
                         <a class="btn btn-link" href="{% url 'about' %}">Contabilidade Organizada</a>
                         <a class="btn btn-link" href="{% url 'about' %}">Consultoria Fiscal</a>
                         <a class="btn btn-link" href="{% url 'about' %}">Processamento Salarial</a>
                         <a class="btn btn-link" href="{% url 'about' %}">Declarações Fiscais</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <h5 class="text-white mb-4">Informações Legais</h5>
+                        <a class="btn btn-link" href="{% url 'privacy_policy' %}">Política de Privacidade</a>
+                        <a class="btn btn-link" href="{% url 'terms_of_service' %}">Termos de Serviço</a>
+                        <a class="btn btn-link" href="{% url 'cookie_policy' %}">Política de Cookies</a>
                     </div>
                 </div>
             </div>
@@ -110,6 +116,7 @@
                     <div class="row">
                         <div class="col-md-12 text-center mb-3 mb-md-0">
                             &copy; <a class="border-bottom" href="#">DUARAMA</a>, Todos os direitos reservados. 2025
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -128,6 +135,32 @@
     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
     <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Cookie Consent -->
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#00B98E",
+                        "text": "#ffffff"
+                    },
+                    "button": {
+                        "background": "#ffffff",
+                        "text": "#00B98E"
+                    }
+                },
+                "content": {
+                    "message": "Este site utiliza cookies para garantir a melhor experiência. Ao continuar navegando, você aceita o uso de cookies.",
+                    "dismiss": "Aceitar",
+                    "link": "Saber mais",
+                    "href": "{% url 'cookie_policy' %}"
+                }
+            })
+        });
+    </script>
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
