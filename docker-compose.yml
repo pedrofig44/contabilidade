@@ -3,33 +3,35 @@ version: '3.8'
 services:
   web:
     build: .
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    volumes:
-      - .:/app
-      - static_volume:/app/static
-    ports:
-      - "8000:8000"
+    restart: always
     depends_on:
       - db
     environment:
-      - DEBUG=True
-      - SECRET_KEY=django-insecure-development-only-key
-      - DB_NAME=duarama_db
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
       - DB_HOST=db
       - DB_PORT=5432
-
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+      - DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL}
+      - SERVER_EMAIL=${SERVER_EMAIL}
+    volumes:
+      - static_volume:/app/static
+    ports:
+      - "8100:8000"
+  
   db:
-    image: postgres:13
+    image: postgres:15
+    restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=duarama_db
-    ports:
-      - "5432:5432"
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
 
 volumes:
   postgres_data:
