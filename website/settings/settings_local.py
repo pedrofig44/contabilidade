@@ -18,7 +18,7 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = [
     'localhost', 
     '127.0.0.1',
-    'a912-2001-818-eaa2-3400-31da-8ae-ca6f-b031.ngrok-free.app'
+    '173e-2001-818-eaa2-3400-16c-6c5c-272a-b7e6.ngrok-free.app'
 ]
 
 
@@ -114,7 +114,7 @@ USE_TZ = True
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://a912-2001-818-eaa2-3400-31da-8ae-ca6f-b031.ngrok-free.app',
+    'https://173e-2001-818-eaa2-3400-16c-6c5c-272a-b7e6.ngrok-free.app',
 ]
 
 
@@ -127,6 +127,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS= [
     os.path.join(BASE_DIR, 'static'),     
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
