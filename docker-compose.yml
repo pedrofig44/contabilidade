@@ -35,4 +35,4 @@ services:
 
 volumes:
   postgres_data:
-  staticfiles:  # Changed from static_volume
+  static_volume:
