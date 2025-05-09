@@ -24,4 +24,4 @@ RUN pip install --upgrade pip \
 COPY . .
 
 # Run the application
-CMD ["sh", "-c", "python manage.py migrate && mkdir -p /app/staticfiles && python manage.py collectstatic --noinput && gunicorn website.wsgi:application --bind 0.0.0.0:8000"]
+CMD ["sh", "-c", "export DJANGO_SETTINGS_MODULE=website.settings.settings_local && python manage.py migrate && mkdir -p /app/staticfiles && python manage.py collectstatic --noinput && gunicorn website.wsgi:application --bind 0.0.0.0:8000"]
