@@ -19,7 +19,7 @@ services:
       - STATIC_ROOT=/app/staticfiles  # Add this line
       - DJANGO_SETTINGS_MODULE=website.settings.settings_local
     volumes:
-      - staticfiles:/app/staticfiles  # Changed from static_volume
+      - static_volume:/app/staticfiles  # Changed from static_volume
     ports:
       - "8100:8000"
   
