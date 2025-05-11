@@ -18,7 +18,7 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = [
     'localhost', 
     '127.0.0.1',
-    '173e-2001-818-eaa2-3400-16c-6c5c-272a-b7e6.ngrok-free.app'
+    '6f09-2001-818-eaa2-3400-3d12-210-91e-4c76.ngrok-free.app'
 ]
 
 
@@ -115,7 +115,7 @@ USE_TZ = True
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://173e-2001-818-eaa2-3400-16c-6c5c-272a-b7e6.ngrok-free.app',
+    'https://6f09-2001-818-eaa2-3400-3d12-210-91e-4c76.ngrok-free.app',
 ]
 
 
@@ -144,10 +144,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.office365.com'
-EMAIL_PORT = 587
+EMAIL_HOST = config('EMAIL_HOST') 
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='marco.duarte@duarama.pt')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='marco.duarte@duarama.pt')
-SERVER_EMAIL = config('SERVER_EMAIL', default='marco.duarte@duarama.pt')
+
+# Try this default email first
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

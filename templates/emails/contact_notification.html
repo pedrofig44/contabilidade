@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" lang="pt-br">
+
+<head>
+  <link rel="stylesheet" type="text/css" hs-webfonts="true" href="https://fonts.googleapis.com/css?family=Lato|Lato:i,b,bi">
+  <meta property="og:title" content="DUARAMA - Notificação de Contacto">  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+  <style type="text/css">
+    #email {
+      margin: auto;
+      width: 600px;
+      background-color: white;
+    }  
+    .btn{
+      font: inherit;
+      background-color: #00B98E;
+      border: none;
+      padding: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
+      border-radius: 5px; 
+      text-decoration: none;
+    }
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .details-table th, .details-table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .details-table th {
+      background-color: #f2f2f2;
+      width: 30%;
+    }
+  </style>    
+</head>    
+<body bgcolor="#F5F8FA" style="width: 100%; margin: auto 0; padding:0; font-family:Lato, sans-serif; font-size:16px; color:#33475B; word-break:break-word">
+  
+<div id="email">
+  <!--
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="center" style="color: white;">
+        <img alt="DUARAMA Logo" src="https://duarama.pt/static/img/logo_duarama.png" width="200px" align="middle">
+      </td>
+    </tr>
+  </table>
+    -->
+
+  <table bgcolor="#EAF0F6" width="100%" role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 30px 30px 40px 40px;">
+    <tr>
+      <td>
+        <h2 style="text-align: center;">Novo Pedido de Contacto: {{ subject_display }}</h2>
+        <p style="margin-bottom: 20px;">Recebeu um novo pedido de contacto através do website da DUARAMA em {{ created_at }}:</p>
+        
+        <table class="details-table">
+          <tr>
+            <th>Nome:</th>
+            <td>{{ name }}</td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td><a href="mailto:{{ email }}">{{ email }}</a></td>
+          </tr>
+          <tr>
+            <th>Telefone:</th>
+            <td>{{ phone }}</td>
+          </tr>
+          <tr>
+            <th>Assunto:</th>
+            <td>{{ subject_display }}</td>
+          </tr>
+        </table>
+        
+        <h3>Mensagem:</h3>
+        <div style="background-color: #fff; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+          {{ message|linebreaks }}
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="mailto:{{ email }}" class="btn" style="color: #fff;">Responder ao Cliente</a>
+        </div>
+      </td> 
+    </tr>
+  </table>
+
+  <table role="presentation" bgcolor="#00B98E" width="100%">
+    <tr>
+      <td align="center" style="padding: 15px 15px; color: #fff;">
+        <p>© {% now "Y" %} DUARAMA - Contabilidade e Consultoria, Todos os Direitos Reservados.</p>
+        <a href="https://duarama.pt" style="color:#fff;">Visitar Website</a>      
+      </td>
+    </tr>
+  </table> 
+</div>
+</body>
+</html>
