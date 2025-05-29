@@ -25,7 +25,7 @@ def send_contact_notification(contact_request):
     email_content = render_to_string('emails/contact_notification.html', context)
     
     # Recipient email
-    to_email = 'allspotteste@gmail.com'
+    to_email = 'marco.duarte@duarama.pt'
     
     # Create and send the email
     mail = EmailMessage(
